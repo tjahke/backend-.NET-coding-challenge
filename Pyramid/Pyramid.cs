@@ -18,7 +18,18 @@ namespace Pyramid
     {
         private static void Pyramid(int height)
         {
-            Console.WriteLine("A beautiful pyramid");
+            if (height < 1)
+            {
+                Console.WriteLine("A beautiful pyramid has to have at least one layer.");
+                return;
+            }
+                
+            for (int layer = 0; layer < height; layer++)
+            {
+                string spaces = new string(' ', height - layer - 1);
+                string asterisks = new string('*', 2 * layer + 1);
+                Console.WriteLine($"{spaces}{asterisks}");
+            }
         }
         
         public static void Main(string[] args)
