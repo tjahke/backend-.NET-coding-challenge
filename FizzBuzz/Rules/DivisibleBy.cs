@@ -9,6 +9,11 @@ namespace FizzBuzz.Rules
 
         public DivisibleBy(int divisor, string text)
         {
+            if (divisor == 0)
+            {
+                throw new ArgumentOutOfRangeException("Divisor of 0 is invalid.");
+            }
+
             this.divisor = divisor;
             this.text = text;
         }

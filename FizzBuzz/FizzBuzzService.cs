@@ -9,6 +9,11 @@ namespace FizzBuzz
     {
         public void RunFizzBuzz(int limit)
         {
+            if (limit < 1)
+            {
+                throw new ArgumentOutOfRangeException("Limit has to be a positive integer");
+            }
+
             List<IRule> rules = new List<IRule>();
             rules.Add(new DivisibleBy(3, "Fizz"));
             rules.Add(new DivisibleBy(5, "Buzz"));
